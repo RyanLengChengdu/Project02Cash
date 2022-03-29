@@ -9,6 +9,7 @@
 #import "SettingViewController.h"
 #import "Masonry.h"
 #import "QiCardView.h"
+#import "QiCardCell.h"
 @interface Page1ViewController ()<QiCardViewDataSource, QiCardViewDelegate>
 @property(nonatomic,strong)UIView *navigationBottom_Border;
 @property(nonatomic,strong)QiCardView *cardView;
@@ -25,7 +26,7 @@
 }
 //初始化cardView
 -(void)initCardViews{
-    _cardView = [[QiCardView alloc]init];
+    _cardView = [[QiCardView alloc]initWithFrame:CGRectMake(25.0, 150.0, self.view.frame.size.width - 50.0, 420.0)];
     _cardView.backgroundColor = [UIColor lightGrayColor];//!< 为了指出carddView的区域，指明背景色
     _cardView.dataSource = self;
     _cardView.delegate = self;
@@ -36,7 +37,7 @@
     _cardView.isAlpha = YES;
     _cardView.maxRemoveDistance = 100.0;
     _cardView.layer.cornerRadius = 10.0;
-    [_cardView registerClass:[QiCardItemCell class] forCellReuseIdentifier:qiCardCellId];
+    [_cardView registerClass:[QiCardViewCell class] forCellReuseIdentifier:@"cardCell"];
     [self.view addSubview:_cardView];
 }
 - (void)viewWillAppear:(BOOL)animated{
@@ -75,21 +76,15 @@
 
 #pragma mark - QiCardViewDataSource
 
-- (QiCardItemCell *)cardView:(QiCardView *)cardView cellForRowAtIndex:(NSInteger)index {
-    
-    QiCardItemCell *cell = [cardView dequeueReusableCellWithIdentifier:qiCardCellId];
-    cell.cellData = _cellItems[index];
+- (QiCardCell *)cardView:(QiCardView *)cardView cellForRowAtIndex:(NSInteger)index {
+    QiCardCell *cell = [cardView dequeueReusableCellWithIdentifier:@"cardCell"];
     cell.layer.cornerRadius = 10.0;
     cell.layer.masksToBounds = YES;
-    cell.buttonClicked = ^(UIButton *sender) {
-        SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:self.cellItems[index].url]];
-        [self presentViewController:safariVC animated:YES completion:nil];
-    };
     return cell;
 }
 
 - (NSInteger)numberOfCountInCardView:(UITableView *)cardView {
-    return _cellItems.count;
+    return 3;
 }
 
 

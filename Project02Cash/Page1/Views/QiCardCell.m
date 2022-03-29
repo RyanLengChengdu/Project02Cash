@@ -9,6 +9,16 @@
 
 @implementation QiCardCell
 
+-(instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier{
+    if (self = [super initWithReuseIdentifier:reuseIdentifier]) {
+        
+    }
+    return self;
+}
+- (void)layoutSubviews {
 
-
+}
+- (void)setCellData {
+    
+}
 @end
