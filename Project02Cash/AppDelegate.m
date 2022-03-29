@@ -6,7 +6,9 @@
 //
 
 #import "AppDelegate.h"
-
+#import "Page1ViewController.h"
+#import "Page2ViewController.h"
+#import "Page3ViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -15,26 +17,31 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
+    UITabBarController *tabBarController = [[UITabBarController alloc]init];
+    //设置文字选中和不选中的颜色设置
+    [[UITabBar appearance]setTintColor:[UIColor colorWithRed:192/255.0 green:38/255.0 blue:40/255.0 alpha:1.00]];
+    [[UITabBar appearance]setUnselectedItemTintColor:[UIColor colorWithRed:118/255.0 green:118/255.0 blue:118/255.0 alpha:1.00]];
+    Page1ViewController *page1VC = [[Page1ViewController alloc]init];
+    Page2ViewController *page2VC = [[Page2ViewController alloc]init];
+    Page3ViewController *page3VC = [[Page3ViewController alloc]init];
+    
+    [tabBarController setViewControllers:[NSArray arrayWithObjects:page1VC,page2VC,page3VC, nil]];
+    
+    UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:tabBarController];
+    //tabbar字体颜色设置
+    [navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:19],NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    [self.window setRootViewController:navigationController];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
 
-#pragma mark - UISceneSession lifecycle
-
-
-- (UISceneConfiguration *)application:(UIApplication *)application configurationForConnectingSceneSession:(UISceneSession *)connectingSceneSession options:(UISceneConnectionOptions *)options {
-    // Called when a new scene session is being created.
-    // Use this method to select a configuration to create the new scene with.
-    return [[UISceneConfiguration alloc] initWithName:@"Default Configuration" sessionRole:connectingSceneSession.role];
-}
-
-
-- (void)application:(UIApplication *)application didDiscardSceneSessions:(NSSet<UISceneSession *> *)sceneSessions {
-    // Called when the user discards a scene session.
-    // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-    // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-}
+-(void)applicationWillResignActive:(UIApplication *)application{}
+-(void)applicationDidEnterBackground:(UIApplication *)application{}
+-(void)applicationWillEnterForeground:(UIApplication *)application{}
+-(void)applicationDidBecomeActive:(UIApplication *)application{}
+- (void)applicationWillTerminate:(UIApplication *)application{}
 
 
 @end

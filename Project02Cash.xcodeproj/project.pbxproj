@@ -8,20 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		5F0D3FB827F2AA6F00BC2FD3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0D3FB727F2AA6F00BC2FD3 /* AppDelegate.m */; };
-		5F0D3FBB27F2AA6F00BC2FD3 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0D3FBA27F2AA6F00BC2FD3 /* SceneDelegate.m */; };
 		5F0D3FBE27F2AA6F00BC2FD3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0D3FBD27F2AA6F00BC2FD3 /* ViewController.m */; };
 		5F0D3FC127F2AA6F00BC2FD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F0D3FBF27F2AA6F00BC2FD3 /* Main.storyboard */; };
 		5F0D3FC327F2AA7000BC2FD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F0D3FC227F2AA7000BC2FD3 /* Assets.xcassets */; };
 		5F0D3FC627F2AA7000BC2FD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F0D3FC427F2AA7000BC2FD3 /* LaunchScreen.storyboard */; };
 		5F0D3FC927F2AA7000BC2FD3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0D3FC827F2AA7000BC2FD3 /* main.m */; };
+		5F0D3FD327F2AD7500BC2FD3 /* Page3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0D3FD227F2AD7500BC2FD3 /* Page3ViewController.m */; };
+		5F0D3FD927F2AE8400BC2FD3 /* Page2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0D3FD827F2AE8400BC2FD3 /* Page2ViewController.m */; };
+		5F0D3FDD27F2AEA300BC2FD3 /* Page1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0D3FDC27F2AEA300BC2FD3 /* Page1ViewController.m */; };
+		5F0D3FE327F2EAF100BC2FD3 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0D3FE227F2EAF100BC2FD3 /* SettingViewController.m */; };
+		5F0D3FEB27F30D8B00BC2FD3 /* QiCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0D3FEA27F30D8B00BC2FD3 /* QiCardCell.m */; };
+		A364B9F0AA47DA6D800D98CB /* libPods-Project02Cash.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C724AC4ED1F43FFCEBD94A /* libPods-Project02Cash.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D6D85BCC44D5D0BF3410DDD /* Pods-Project02Cash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project02Cash.debug.xcconfig"; path = "Target Support Files/Pods-Project02Cash/Pods-Project02Cash.debug.xcconfig"; sourceTree = "<group>"; };
+		1B65BD20F3A849A51A4F8B48 /* Pods-Project02Cash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project02Cash.release.xcconfig"; path = "Target Support Files/Pods-Project02Cash/Pods-Project02Cash.release.xcconfig"; sourceTree = "<group>"; };
 		5F0D3FB327F2AA6F00BC2FD3 /* Project02Cash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project02Cash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F0D3FB627F2AA6F00BC2FD3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5F0D3FB727F2AA6F00BC2FD3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5F0D3FB927F2AA6F00BC2FD3 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		5F0D3FBA27F2AA6F00BC2FD3 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		5F0D3FBC27F2AA6F00BC2FD3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		5F0D3FBD27F2AA6F00BC2FD3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		5F0D3FC027F2AA6F00BC2FD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -29,6 +34,17 @@
 		5F0D3FC527F2AA7000BC2FD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F0D3FC727F2AA7000BC2FD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F0D3FC827F2AA7000BC2FD3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5F0D3FD127F2AD7500BC2FD3 /* Page3ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Page3ViewController.h; sourceTree = "<group>"; };
+		5F0D3FD227F2AD7500BC2FD3 /* Page3ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Page3ViewController.m; sourceTree = "<group>"; };
+		5F0D3FD727F2AE8400BC2FD3 /* Page2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Page2ViewController.h; sourceTree = "<group>"; };
+		5F0D3FD827F2AE8400BC2FD3 /* Page2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Page2ViewController.m; sourceTree = "<group>"; };
+		5F0D3FDB27F2AEA300BC2FD3 /* Page1ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Page1ViewController.h; sourceTree = "<group>"; };
+		5F0D3FDC27F2AEA300BC2FD3 /* Page1ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Page1ViewController.m; sourceTree = "<group>"; };
+		5F0D3FE127F2EAF100BC2FD3 /* SettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		5F0D3FE227F2EAF100BC2FD3 /* SettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		5F0D3FE927F30D8B00BC2FD3 /* QiCardCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QiCardCell.h; sourceTree = "<group>"; };
+		5F0D3FEA27F30D8B00BC2FD3 /* QiCardCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QiCardCell.m; sourceTree = "<group>"; };
+		F8C724AC4ED1F43FFCEBD94A /* libPods-Project02Cash.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Project02Cash.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A364B9F0AA47DA6D800D98CB /* libPods-Project02Cash.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +64,8 @@
 			children = (
 				5F0D3FB527F2AA6F00BC2FD3 /* Project02Cash */,
 				5F0D3FB427F2AA6F00BC2FD3 /* Products */,
+				F67AD296FF3C1A0CCA51B909 /* Pods */,
+				62A4A460B869B22835D46657 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,10 +80,13 @@
 		5F0D3FB527F2AA6F00BC2FD3 /* Project02Cash */ = {
 			isa = PBXGroup;
 			children = (
+				5F0D3FE127F2EAF100BC2FD3 /* SettingViewController.h */,
+				5F0D3FE227F2EAF100BC2FD3 /* SettingViewController.m */,
+				5F0D3FD527F2AE5B00BC2FD3 /* Page1 */,
+				5F0D3FD427F2AE5400BC2FD3 /* Page2 */,
+				5F0D3FCF27F2AD2200BC2FD3 /* Page3 */,
 				5F0D3FB627F2AA6F00BC2FD3 /* AppDelegate.h */,
 				5F0D3FB727F2AA6F00BC2FD3 /* AppDelegate.m */,
-				5F0D3FB927F2AA6F00BC2FD3 /* SceneDelegate.h */,
-				5F0D3FBA27F2AA6F00BC2FD3 /* SceneDelegate.m */,
 				5F0D3FBC27F2AA6F00BC2FD3 /* ViewController.h */,
 				5F0D3FBD27F2AA6F00BC2FD3 /* ViewController.m */,
 				5F0D3FBF27F2AA6F00BC2FD3 /* Main.storyboard */,
@@ -76,6 +98,92 @@
 			path = Project02Cash;
 			sourceTree = "<group>";
 		};
+		5F0D3FCF27F2AD2200BC2FD3 /* Page3 */ = {
+			isa = PBXGroup;
+			children = (
+				5F0D3FD027F2AD3300BC2FD3 /* Controller */,
+			);
+			path = Page3;
+			sourceTree = "<group>";
+		};
+		5F0D3FD027F2AD3300BC2FD3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5F0D3FD127F2AD7500BC2FD3 /* Page3ViewController.h */,
+				5F0D3FD227F2AD7500BC2FD3 /* Page3ViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5F0D3FD427F2AE5400BC2FD3 /* Page2 */ = {
+			isa = PBXGroup;
+			children = (
+				5F0D3FD627F2AE6C00BC2FD3 /* Controller */,
+			);
+			path = Page2;
+			sourceTree = "<group>";
+		};
+		5F0D3FD527F2AE5B00BC2FD3 /* Page1 */ = {
+			isa = PBXGroup;
+			children = (
+				5F0D3FE427F30AC800BC2FD3 /* Model */,
+				5F0D3FE527F30AD100BC2FD3 /* Views */,
+				5F0D3FDA27F2AE8F00BC2FD3 /* Controller */,
+			);
+			path = Page1;
+			sourceTree = "<group>";
+		};
+		5F0D3FD627F2AE6C00BC2FD3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5F0D3FD727F2AE8400BC2FD3 /* Page2ViewController.h */,
+				5F0D3FD827F2AE8400BC2FD3 /* Page2ViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5F0D3FDA27F2AE8F00BC2FD3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5F0D3FDB27F2AEA300BC2FD3 /* Page1ViewController.h */,
+				5F0D3FDC27F2AEA300BC2FD3 /* Page1ViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5F0D3FE427F30AC800BC2FD3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5F0D3FE527F30AD100BC2FD3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5F0D3FE927F30D8B00BC2FD3 /* QiCardCell.h */,
+				5F0D3FEA27F30D8B00BC2FD3 /* QiCardCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		62A4A460B869B22835D46657 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F8C724AC4ED1F43FFCEBD94A /* libPods-Project02Cash.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F67AD296FF3C1A0CCA51B909 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0D6D85BCC44D5D0BF3410DDD /* Pods-Project02Cash.debug.xcconfig */,
+				1B65BD20F3A849A51A4F8B48 /* Pods-Project02Cash.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,6 +191,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5F0D3FCC27F2AA7000BC2FD3 /* Build configuration list for PBXNativeTarget "Project02Cash" */;
 			buildPhases = (
+				27516672ED8D1F3A8EC01110 /* [CP] Check Pods Manifest.lock */,
 				5F0D3FAF27F2AA6F00BC2FD3 /* Sources */,
 				5F0D3FB027F2AA6F00BC2FD3 /* Frameworks */,
 				5F0D3FB127F2AA6F00BC2FD3 /* Resources */,
@@ -141,6 +250,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		27516672ED8D1F3A8EC01110 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Project02Cash-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5F0D3FAF27F2AA6F00BC2FD3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -149,7 +283,11 @@
 				5F0D3FBE27F2AA6F00BC2FD3 /* ViewController.m in Sources */,
 				5F0D3FB827F2AA6F00BC2FD3 /* AppDelegate.m in Sources */,
 				5F0D3FC927F2AA7000BC2FD3 /* main.m in Sources */,
-				5F0D3FBB27F2AA6F00BC2FD3 /* SceneDelegate.m in Sources */,
+				5F0D3FEB27F30D8B00BC2FD3 /* QiCardCell.m in Sources */,
+				5F0D3FE327F2EAF100BC2FD3 /* SettingViewController.m in Sources */,
+				5F0D3FD327F2AD7500BC2FD3 /* Page3ViewController.m in Sources */,
+				5F0D3FD927F2AE8400BC2FD3 /* Page2ViewController.m in Sources */,
+				5F0D3FDD27F2AEA300BC2FD3 /* Page1ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +425,7 @@
 		};
 		5F0D3FCD27F2AA7000BC2FD3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D6D85BCC44D5D0BF3410DDD /* Pods-Project02Cash.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -297,7 +436,6 @@
 				INFOPLIST_FILE = Project02Cash/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -308,12 +446,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cn.leng.Project02Cash;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		5F0D3FCE27F2AA7000BC2FD3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B65BD20F3A849A51A4F8B48 /* Pods-Project02Cash.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -324,7 +463,6 @@
 				INFOPLIST_FILE = Project02Cash/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -335,7 +473,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cn.leng.Project02Cash;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
