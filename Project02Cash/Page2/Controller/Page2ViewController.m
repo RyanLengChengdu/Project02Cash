@@ -89,6 +89,10 @@
         _GSBackgroundView.layer.shadowOpacity = 1;
         // Radius Code
         _GSBackgroundView.layer.cornerRadius = 8.33;
+        _GSBackgroundView.tag = 0;
+        
+        UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(_turnToDetail:)];
+        [_GSBackgroundView addGestureRecognizer:recognizer];
         _GSBackgroundView;
     })];
     [_GSBackgroundView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -109,6 +113,15 @@
         make.centerY.mas_equalTo(_GSBackgroundView);
         make.width.equalTo(_GSBackgroundView).multipliedBy(75.0/354);
         make.height.equalTo(_GSBackgroundView).multipliedBy(75.0/116);
+    }];
+    [_GSsquareView addSubview:({
+        _GSImageView = [[UIImageView alloc]init];
+        _GSImageView.image = [UIImage imageNamed:@"vzdkjgjr-img"];
+        _GSImageView;
+    })];
+    [_GSImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(0);
+        make.centerY.mas_equalTo(0);
     }];
     
     [_GSBackgroundView addSubview:({
@@ -163,6 +176,15 @@
         make.width.equalTo(self.view).multipliedBy(0.35);
         make.height.equalTo(_SHsquareView.mas_width);
     }];
+    [_SHsquareView addSubview:({
+        _SHImageView = [[UIImageView alloc]init];
+        _SHImageView.image = [UIImage imageNamed:@"sdfkjeeee-img"];
+        _SHImageView;
+    })];
+    [_SHImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(0);
+        make.centerY.mas_equalTo(0);
+    }];
     [_scrollView addSubview:({
         _SHLabel = [[UILabel alloc]init];
         _SHLabel.text = @"上海银行实时汇率";
@@ -178,7 +200,7 @@
     //scrollView_view2
     [_scrollView addSubview:({
         _XYsquareView = [[UIView alloc]init];
-        _XYsquareView.backgroundColor = [UIColor blueColor];
+        //_XYsquareView.backgroundColor = [UIColor blueColor];
         _XYsquareView.layer.cornerRadius = 15;
         _XYsquareView;
     })];
@@ -187,6 +209,15 @@
         make.top.equalTo(_scrollView.mas_top).with.offset(0);
         make.width.equalTo(self.view).multipliedBy(0.35);
         make.height.equalTo(_SHsquareView.mas_width);
+    }];
+    [_XYsquareView addSubview:({
+        _XYImageView = [[UIImageView alloc]init];
+        _XYImageView.image = [UIImage imageNamed:@"fdsje-img"];
+        _XYImageView;
+    })];
+    [_XYImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(0);
+        make.centerY.mas_equalTo(0);
     }];
     [_scrollView addSubview:({
         _XYLabel = [[UILabel alloc]init];
@@ -213,6 +244,15 @@
         make.width.equalTo(self.view).multipliedBy(0.35);
         make.height.equalTo(_SHsquareView.mas_width);
     }];
+    [_GDsquareView addSubview:({
+        _GDImageView = [[UIImageView alloc]init];
+        _GDImageView.image = [UIImage imageNamed:@"sdiji-img"];
+        _GDImageView;
+    })];
+    [_GDImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(0);
+        make.centerY.mas_equalTo(0);
+    }];
     [_scrollView addSubview:({
         _GDLabel = [[UILabel alloc]init];
         _GDLabel.text = @"光大银行实时汇率";
@@ -231,6 +271,9 @@
         _JSsquareView = [[UIView alloc]init];
         _JSsquareView.layer.cornerRadius = 15;
         _JSsquareView.backgroundColor = [UIColor whiteColor];
+        _JSsquareView.tag = 2;
+        UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(_turnToDetail:)];
+        [_JSsquareView addGestureRecognizer:recognizer];
         _JSsquareView;
     })];
     [_JSsquareView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -239,12 +282,25 @@
         make.width.equalTo(self.view).multipliedBy(0.5);
         make.height.equalTo(_JSsquareView.mas_width).with.offset(0);
     }];
+    [_JSsquareView addSubview:({
+        _JSImageView = [[UIImageView alloc]init];
+        _JSImageView.image = [UIImage imageNamed:@"dfskjeiuwe-img"];
+        _JSImageView;
+    })];
+    [_JSImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(_JSsquareView.mas_left).with.offset(0);
+        make.centerX.mas_equalTo(0);
+        make.centerY.mas_equalTo(0);
+    }];
     
     //农业
     [self.view addSubview:({
         _NYsquareView = [[UIView alloc]init];
         _NYsquareView.layer.cornerRadius = 15;
         _NYsquareView.backgroundColor = [UIColor whiteColor];
+        _NYsquareView.tag = 5;
+        UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(_turnToDetail:)];
+        [_NYsquareView addGestureRecognizer:recognizer];
         _NYsquareView;
     })];
     [_NYsquareView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -253,12 +309,24 @@
         make.height.equalTo(_JSsquareView.mas_height).multipliedBy(0.45);
         make.top.equalTo(_JSsquareView.mas_top).with.offset(0);
     }];
+    [_NYsquareView addSubview:({
+        _NYImageView = [[UIImageView alloc]init];
+        _NYImageView.image = [UIImage imageNamed:@"sdjewwe-img"];
+        _NYImageView;
+    })];
+    [_NYImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(0);
+        make.centerY.mas_equalTo(0);
+    }];
     
     //招商
     [self.view addSubview:({
         _ZSsquareView = [[UIView alloc]init];
         _ZSsquareView.layer.cornerRadius = 15;
         _ZSsquareView.backgroundColor = [UIColor whiteColor];
+        _ZSsquareView.tag = 1;
+        UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(_turnToDetail:)];
+        [_ZSsquareView addGestureRecognizer:recognizer];
         _ZSsquareView;
     })];
     [_ZSsquareView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -267,6 +335,17 @@
         make.height.equalTo(_JSsquareView.mas_height).multipliedBy(0.45);
         make.bottom.equalTo(_JSsquareView.mas_bottom).with.offset(0);
     }];
+    [_ZSsquareView addSubview:({
+        _ZSImageView = [[UIImageView alloc]init];
+        _ZSImageView.image = [UIImage imageNamed:@"bvkdfjgr-img"];
+        _ZSImageView;
+    })];
+    [_ZSImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(0);
+        make.centerY.mas_equalTo(0);
+    }];
 }
-
+-(void)_turnToDetail:(UITapGestureRecognizer *)sender{
+    NSLog(@"%ld",sender.view.tag);
+}
 @end

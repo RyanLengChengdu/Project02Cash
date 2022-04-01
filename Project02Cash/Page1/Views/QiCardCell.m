@@ -89,12 +89,14 @@
     [self.contentView addSubview:({
         _rightLabel = [[UILabel alloc]init];
         _rightLabel.backgroundColor = [UIColor colorWithRed:233/255.0 green:233/255.0 blue:233/255.0 alpha:1.00];
+        
+        //
         NSDate *currentDate = [NSDate date];
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"HH时mm分ss秒 "];
         //NSDate转NSString
         NSString *currentDateString = [dateFormatter stringFromDate:currentDate];
-        _rightLabel.text = currentDateString;
+        self.rightLabel.text = currentDateString;
         _rightLabel.textColor = [UIColor blackColor];
         _rightLabel.textAlignment = NSTextAlignmentCenter;
         _rightLabel;

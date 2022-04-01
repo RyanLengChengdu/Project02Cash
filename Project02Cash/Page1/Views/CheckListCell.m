@@ -41,7 +41,7 @@
         }];
         //左上图片
         [_outsideView addSubview:({
-            _cashImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"banner-sdfkawjketjaw-img"]];
+            _cashImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"vjjjhw3je-img"]];
             _cashImageView;
         })];
         [_cashImageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -147,6 +147,7 @@
             _date_Label = [[UILabel alloc]init];
             //_date_Label.text = @"发布日期：2022-01-01";
             _date_Label.textColor = [UIColor orangeColor];
+            
             _date_Label;
         })];
         [_date_Label mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -176,6 +177,7 @@
     NSDictionary *shortName_dic = @{@"美元":@"USD",@"欧元":@"EUR",@"港币":@"HKD",@"日元":@"JPY",@"英镑":@"GBP",@"澳大利亚元":@"AUD",@"加拿大元":@"CAD",@"泰国铢":@"THB",@"新加坡元":@"SGD",@"瑞士法郎":@"CHF",@"丹麦克朗":@"DKK",@"澳门元":@"MOP",@"林吉特":@"MYR",@"挪威克朗":@"NOK",@"新西兰元":@"NZD",@"菲律宾比索":@"PHP",@"卢布":@"SUR",@"瑞典克朗":@"SEK",@"新台币":@"TWD",@"巴西雷亚尔":@"BRL",@"韩国元":@"KRW",@"南非兰特":@"ZAR"};
     self.name_Label.text = [ NSString stringWithFormat:@"货币名称:%@",item.name];
     self.date_Label.text =[ NSString stringWithFormat:@"发布日期:%@",item.date];
+    
     self.time_Label.text =[ NSString stringWithFormat:@"发布时间:%@",item.time];
     self.fBuyPri_Label.text =[ NSString stringWithFormat:@"现汇买入价:%@",item.fBuyPri];
     self.mBuyPri_Label.text = [ NSString stringWithFormat:@"现钞买入价:%@",item.mBuyPri];
@@ -183,6 +185,15 @@
     self.mSellPri_Label.text = [ NSString stringWithFormat:@"现钞卖出价:%@",item.mSellPri];
     self.bankConversionPri_Label.text = [NSString stringWithFormat:@"中行折算价:%@",item.bankConversionPri];
     self.shortName_Label.text =[NSString stringWithFormat:@"货币简称:%@",[shortName_dic objectForKey:item.name]];
+    self.name_Label.adjustsFontSizeToFitWidth = YES;
+    self.date_Label.adjustsFontSizeToFitWidth = YES;
+    self.time_Label.adjustsFontSizeToFitWidth = YES;
+    self.fBuyPri_Label.adjustsFontSizeToFitWidth = YES;
+    self.mBuyPri_Label.adjustsFontSizeToFitWidth = YES;
+    self.fSellPri_Label.adjustsFontSizeToFitWidth = YES;
+    self.mSellPri_Label.adjustsFontSizeToFitWidth = YES;
+    self.bankConversionPri_Label.adjustsFontSizeToFitWidth = YES;
+    self.shortName_Label.adjustsFontSizeToFitWidth = YES;
 }
 
 

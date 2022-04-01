@@ -22,6 +22,8 @@
 @property(nonatomic,strong)UITableView *tableView;
 @property(nonatomic,strong,readwrite)NSArray *dataArray;
 @property(nonatomic,strong)ListLoader *loader;
+
+//@property (nonatomic,strong)NSNotification *notification;
 @end
 
 @implementation Page1ViewController
@@ -29,10 +31,16 @@
     self = [super init];
     if (self) {
         self.tabBarItem.title = @"中行汇率";
-
-    }
+        __weak typeof(self)weakSelf = self;
+        NSTimer *timer = [NSTimer timerWithTimeInterval:10.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
+            __strong typeof(self)strongSelf = weakSelf;
+            [strongSelf.cardView reloadData];
+        }];
+        [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+}
     return self;
 }
+
 //初始化cardView
 -(void)initCardViews{
     //适配的时候修改距离上边距的距离
@@ -88,6 +96,7 @@
         _scrollView;
     })];
     [self initCardViews];
+
     [_scrollView addSubview:({
         _allCheckListLabel = [[UILabel alloc]init];
         _allCheckListLabel.text = @"所有货币实时汇率查询表";
@@ -113,6 +122,7 @@
     [_scrollView addSubview:({
         _unfoldButton =[[UIButton alloc]init];
         [_unfoldButton setImage:[UIImage imageNamed:@"hm-ic-arrow-down"] forState:UIControlStateNormal];
+        [_unfoldButton addTarget:self action:@selector(_scroll) forControlEvents:UIControlEventTouchUpInside];
         _unfoldButton;
     })];
     [_unfoldButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -135,13 +145,30 @@
         make.left.equalTo(self.view).with.offset(10.33);
         make.height.equalTo(self.view).multipliedBy(2);
     }];
+    
     _loader = [[ListLoader alloc]init];
     __weak typeof(self)weakSelf = self;
-    [self.loader loadDataWithFinishBlock:^(BOOL success, NSArray<CashItem *> *dataArray) {
+    NSTimer *timer2 = [NSTimer timerWithTimeInterval:10.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
         __strong typeof(self)strongSelf = weakSelf;
-        strongSelf.dataArray = dataArray;
-        [strongSelf.tableView reloadData];
+        
+        __weak typeof(self)weakSelf2 = strongSelf;
+        [strongSelf.loader loadDataWithFinishBlock:^(BOOL success, NSArray<CashItem *> *dataArray) {
+                __strong typeof(self)strongSelf2 = weakSelf2;
+                strongSelf2.dataArray = dataArray;
+                [strongSelf2.tableView reloadData];
+            }];
     }];
+    [[NSRunLoop currentRunLoop] addTimer:timer2 forMode:NSRunLoopCommonModes];
+    
+//    _loader = [[ListLoader alloc]init];
+//    __weak typeof(self)weakSelf = self;
+//    [self.loader loadDataWithFinishBlock:^(BOOL success, NSArray<CashItem *> *dataArray) {
+//        __strong typeof(self)strongSelf = weakSelf;
+//        strongSelf.dataArray = dataArray;
+//        [strongSelf.tableView reloadData];
+//    }];
+    
+    
 }
 
 -(void)_click_left_button{
@@ -176,6 +203,7 @@
     if (!cell) {
         cell = [[CheckListCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
+    [cell setBackgroundColor:[UIColor colorWithRed:31/255.0 green:34/255.0 blue:38/255.0 alpha:1.00]];
     [cell setDataWithCashItem:[_dataArray objectAtIndex:indexPath.row]];
     return cell;
 }
@@ -203,5 +231,9 @@
 
 - (void)cardView:(QiCardView *)cardView didMoveCell:(QiCardViewCell *)cell forMovePoint:(CGPoint)point {
 //    NSLog(@"move point = %@", NSStringFromCGPoint(point));
+}
+-(void)_scroll{
+    CGPoint position = CGPointMake(0, 100);
+    [_scrollView setContentOffset:position animated:YES];
 }
 @end

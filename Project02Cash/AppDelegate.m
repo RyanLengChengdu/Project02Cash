@@ -22,12 +22,21 @@
     //设置文字选中和不选中的颜色设置
     [[UITabBar appearance]setTintColor:[UIColor colorWithRed:192/255.0 green:38/255.0 blue:40/255.0 alpha:1.00]];
     [[UITabBar appearance]setUnselectedItemTintColor:[UIColor colorWithRed:118/255.0 green:118/255.0 blue:118/255.0 alpha:1.00]];
+
+    
     Page1ViewController *page1VC = [[Page1ViewController alloc]init];
     Page2ViewController *page2VC = [[Page2ViewController alloc]init];
     Page3ViewController *page3VC = [[Page3ViewController alloc]init];
     
     [tabBarController setViewControllers:[NSArray arrayWithObjects:page1VC,page2VC,page3VC, nil]];
-    
+    __weak typeof(self)weakSelf = self;
+//    NSTimer *timer = [NSTimer timerWithTimeInterval:10.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
+//        __strong typeof(self)strongSelf = weakSelf;
+//        [page1VC removeFromParentViewController];
+//        Page1ViewController *page1VC = [[Page1ViewController alloc]init];
+//        [tabBarController setViewControllers:[NSArray arrayWithObjects:page1VC,page2VC,page3VC, nil]];
+//    }];
+    //[[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
     UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:tabBarController];
     //tabbar字体颜色设置
     [navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:19],NSForegroundColorAttributeName:[UIColor whiteColor]}];

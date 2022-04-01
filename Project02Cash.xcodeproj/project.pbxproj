@@ -21,6 +21,8 @@
 		5F44544B27F423270002E1E0 /* CheckListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F44544A27F423270002E1E0 /* CheckListCell.m */; };
 		5F44544E27F424CE0002E1E0 /* CashItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F44544D27F424CE0002E1E0 /* CashItem.m */; };
 		5F44545127F448CB0002E1E0 /* ListLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F44545027F448CB0002E1E0 /* ListLoader.m */; };
+		5F48736C27F6DBED00324553 /* transferItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F48736B27F6DBED00324553 /* transferItem.m */; };
+		5F48737027F6DDB900324553 /* TransferCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F48736F27F6DDB900324553 /* TransferCell.m */; };
 		A364B9F0AA47DA6D800D98CB /* libPods-Project02Cash.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C724AC4ED1F43FFCEBD94A /* libPods-Project02Cash.a */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +55,10 @@
 		5F44544D27F424CE0002E1E0 /* CashItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CashItem.m; sourceTree = "<group>"; };
 		5F44544F27F448CB0002E1E0 /* ListLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListLoader.h; sourceTree = "<group>"; };
 		5F44545027F448CB0002E1E0 /* ListLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListLoader.m; sourceTree = "<group>"; };
+		5F48736A27F6DBED00324553 /* transferItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = transferItem.h; sourceTree = "<group>"; };
+		5F48736B27F6DBED00324553 /* transferItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = transferItem.m; sourceTree = "<group>"; };
+		5F48736E27F6DDB900324553 /* TransferCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransferCell.h; sourceTree = "<group>"; };
+		5F48736F27F6DDB900324553 /* TransferCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransferCell.m; sourceTree = "<group>"; };
 		F8C724AC4ED1F43FFCEBD94A /* libPods-Project02Cash.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Project02Cash.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -110,6 +116,8 @@
 		5F0D3FCF27F2AD2200BC2FD3 /* Page3 */ = {
 			isa = PBXGroup;
 			children = (
+				5F48736D27F6DD5C00324553 /* Views */,
+				5F48736927F6DBD200324553 /* Model */,
 				5F0D3FD027F2AD3300BC2FD3 /* Controller */,
 			);
 			path = Page3;
@@ -178,6 +186,24 @@
 				5F0D3FEA27F30D8B00BC2FD3 /* QiCardCell.m */,
 				5F44544927F423270002E1E0 /* CheckListCell.h */,
 				5F44544A27F423270002E1E0 /* CheckListCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5F48736927F6DBD200324553 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5F48736A27F6DBED00324553 /* transferItem.h */,
+				5F48736B27F6DBED00324553 /* transferItem.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5F48736D27F6DD5C00324553 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5F48736E27F6DDB900324553 /* TransferCell.h */,
+				5F48736F27F6DDB900324553 /* TransferCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -303,7 +329,9 @@
 				5F0D3FEB27F30D8B00BC2FD3 /* QiCardCell.m in Sources */,
 				5F0D3FE327F2EAF100BC2FD3 /* SettingViewController.m in Sources */,
 				5F0D3FD327F2AD7500BC2FD3 /* Page3ViewController.m in Sources */,
+				5F48737027F6DDB900324553 /* TransferCell.m in Sources */,
 				5F44544E27F424CE0002E1E0 /* CashItem.m in Sources */,
+				5F48736C27F6DBED00324553 /* transferItem.m in Sources */,
 				5F0D3FD927F2AE8400BC2FD3 /* Page2ViewController.m in Sources */,
 				5F0D3FDD27F2AEA300BC2FD3 /* Page1ViewController.m in Sources */,
 			);
