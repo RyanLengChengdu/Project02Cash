@@ -6,11 +6,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class CashItem;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CheckListCell : UITableViewCell
-
+-(void)setDataWithCashItem:(CashItem *)item;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -37,7 +37,7 @@
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-
+    [self.view setBackgroundColor:[UIColor blackColor]];
     //第一个框
     [self.view addSubview:({
         _square1 = [[UIView alloc]init];

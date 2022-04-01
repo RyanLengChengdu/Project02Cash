@@ -6,9 +6,9 @@
 //
 
 #import "Page3ViewController.h"
-
+#import "Masonry.h"
 @interface Page3ViewController ()
-
+@property(nonatomic,strong)UIView *navigationBottom_Border;
 @end
 
 @implementation Page3ViewController
@@ -24,6 +24,17 @@
     [super viewWillAppear:animated];
     self.tabBarItem.selectedImage = [[UIImage imageNamed:@"tab-icon-hv-s"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     self.navigationController.navigationBar.topItem.title = @"汇率转换器";
+    //navigationbar的下划线设置
+    [self.view addSubview:({
+        _navigationBottom_Border = [[UIView alloc]init];
+        _navigationBottom_Border.backgroundColor = [UIColor redColor];
+        _navigationBottom_Border;
+    })];
+    [_navigationBottom_Border mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(self.view.mas_width);
+        make.top.equalTo(self.mas_topLayoutGuideBottom).with.offset(0);
+        make.height.equalTo(@2);
+    }];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

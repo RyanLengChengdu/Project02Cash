@@ -20,6 +20,8 @@
 @property(nonatomic,strong)UILabel *canUnfoldLabel;
 @property(nonatomic,strong)UIButton *unfoldButton;
 @property(nonatomic,strong)UITableView *tableView;
+@property(nonatomic,strong,readwrite)NSArray *dataArray;
+@property(nonatomic,strong)ListLoader *loader;
 @end
 
 @implementation Page1ViewController
@@ -27,7 +29,7 @@
     self = [super init];
     if (self) {
         self.tabBarItem.title = @"中行汇率";
-        
+
     }
     return self;
 }
@@ -68,15 +70,14 @@
     })];
     [_navigationBottom_Border mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.equalTo(self.view.mas_width);
-        make.top.equalTo(self.mas_topLayoutGuideBottom).with.offset(1);
+        make.top.equalTo(self.mas_topLayoutGuideBottom).with.offset(0);
         make.height.equalTo(@2);
     }];
 
-   
-    
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     [self.view setBackgroundColor:[UIColor colorWithRed:31/255.0 green:34/255.0 blue:38/255.0 alpha:1.00]];
     [self.view addSubview:({
         _scrollView = [[UIScrollView alloc]initWithFrame:self.view.bounds];
@@ -127,16 +128,20 @@
         _tableView.backgroundColor = [UIColor colorWithRed:31/255.0 green:34/255.0 blue:38/255.0 alpha:1.00];
         _tableView;
     })];
+
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_allCheckListLabel.mas_bottom).with.offset(16.67);
         make.centerX.mas_equalTo(0);
         make.left.equalTo(self.view).with.offset(10.33);
         make.height.equalTo(self.view).multipliedBy(2);
     }];
-//    ListLoader *loader = [[ListLoader alloc]init];
-//    [loader loadDataWithFinishBlock:^(BOOL success, NSArray<CashItem *> * _Nonnull dataArray) {
-//        NSLog(@"dsds");
-//    }];
+    _loader = [[ListLoader alloc]init];
+    __weak typeof(self)weakSelf = self;
+    [self.loader loadDataWithFinishBlock:^(BOOL success, NSArray<CashItem *> *dataArray) {
+        __strong typeof(self)strongSelf = weakSelf;
+        strongSelf.dataArray = dataArray;
+        [strongSelf.tableView reloadData];
+    }];
 }
 
 -(void)_click_left_button{
@@ -163,7 +168,7 @@
 
 #pragma mark - TableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    return 22;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -171,7 +176,7 @@
     if (!cell) {
         cell = [[CheckListCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
-    
+    [cell setDataWithCashItem:[_dataArray objectAtIndex:indexPath.row]];
     return cell;
 }
 
