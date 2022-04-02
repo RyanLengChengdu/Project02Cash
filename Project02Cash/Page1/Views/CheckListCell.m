@@ -30,15 +30,47 @@
         [self.contentView addSubview:({
             _outsideView = [[UIView alloc]init];
             _outsideView.layer.cornerRadius = 8.33;
-            _outsideView.backgroundColor = [UIColor blackColor];
+
             _outsideView;
         })];
         [_outsideView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerX.mas_equalTo(0);
-            make.left.equalTo(self.mas_left).with.offset(10.33);
-            make.top.equalTo(self.mas_top);
-            make.bottom.equalTo(self.mas_bottom).with.offset(-13.33);
+            //make.centerX.mas_equalTo(0);
+            make.left.equalTo(self).with.offset(10.33);
+            make.right.equalTo(self).with.offset(-10.33);
+            make.top.equalTo(self).with.offset(0);
+            //make.bottom.equalTo(self.mas_bottom).with.offset(-13.33);
+            make.height.equalTo(self).multipliedBy(222.0/235);
         }];
+
+        [_outsideView.layer addSublayer:({
+            CAGradientLayer *gl = [[CAGradientLayer alloc]init];
+            if(self.color2 == YES){
+                gl.colors = @[
+                    (__bridge id)[UIColor colorWithRed:214/255.0 green:37/255.0 blue:41/255.0 alpha:1.00].CGColor,
+                    (__bridge id)[UIColor colorWithRed:117/255.0 green:51/255.0 blue:51/255.0 alpha:1.00].CGColor,
+                    ];
+            }else{
+                gl.colors = @[
+                    (__bridge id)[UIColor colorWithRed:59/255.0 green:57/255.0 blue:57/255.0 alpha:1.00].CGColor,
+                    (__bridge id)[UIColor colorWithRed:117/255.0 green:51/255.0 blue:51/255.0 alpha:1.00].CGColor,
+                    ];
+            }
+            
+            //gl.locations = @[@0.0, @1.0];
+            //左右渐变透明
+            gl.startPoint = CGPointMake(0, 0);
+            gl.endPoint = CGPointMake(1.0, 1.0);
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+
+                NSLog(@"%@", self.outsideView);
+                gl.frame =self.outsideView.bounds;
+
+            });
+            //gl.frame = _outsideView.bounds;
+            gl.cornerRadius = 8.33;
+            gl;
+        })];
+        
         //左上图片
         [_outsideView addSubview:({
             _cashImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"vjjjhw3je-img"]];
@@ -172,7 +204,6 @@
     }
     return self;
 }
-
 -(void)setDataWithCashItem:(CashItem *)item{
     NSDictionary *shortName_dic = @{@"美元":@"USD",@"欧元":@"EUR",@"港币":@"HKD",@"日元":@"JPY",@"英镑":@"GBP",@"澳大利亚元":@"AUD",@"加拿大元":@"CAD",@"泰国铢":@"THB",@"新加坡元":@"SGD",@"瑞士法郎":@"CHF",@"丹麦克朗":@"DKK",@"澳门元":@"MOP",@"林吉特":@"MYR",@"挪威克朗":@"NOK",@"新西兰元":@"NZD",@"菲律宾比索":@"PHP",@"卢布":@"SUR",@"瑞典克朗":@"SEK",@"新台币":@"TWD",@"巴西雷亚尔":@"BRL",@"韩国元":@"KRW",@"南非兰特":@"ZAR"};
     self.name_Label.text = [ NSString stringWithFormat:@"货币名称:%@",item.name];

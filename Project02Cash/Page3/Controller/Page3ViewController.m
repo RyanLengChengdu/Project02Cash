@@ -28,6 +28,10 @@
 @property(nonatomic,strong)NSArray *dataArray;
 @property(nonatomic,strong)ListLoader *loader;
 
+@property (nonatomic, assign)float money1;
+@property (nonatomic, assign)float money2;
+@property (nonatomic, assign)float res;
+
 
 @end
 
@@ -223,22 +227,27 @@
     _right_label_2.text = arr[indexPath.row][1];
     _right_label_3.text = [NSString stringWithFormat:@"%@",arr[indexPath.row][2]];
     //   前/后*数量
-    NSMutableString *money1 = @[].mutableCopy;
-    NSMutableString *money2 = @[].mutableCopy;
+
     for (CashItem *info in _dataArray) {
-        if (info.name == arr[indexPath.row][0]) {
-            money1 =info.bankConversionPri;
+        if ([arr[indexPath.row][0] isEqualToString:info.name]) {
+           NSString *money1str =info.bankConversionPri;
+            NSLog(@"%@",info.name);
+            _money1 = [money1str floatValue];
             break;
         }
     }
-    NSLog(@"%@",money1);
+   
     for (CashItem *info in _dataArray) {
-        if (info.name == arr[indexPath.row][1]) {
-            money2 =info.bankConversionPri;
+        if ([arr[indexPath.row][1] isEqualToString:info.name]) {
+            NSString *money2str =info.bankConversionPri;
+            _money2 = [money2str floatValue];
             break;
         }
     }
     
-    
+    _res = _money1/_money2*[arr[indexPath.row][2] floatValue];
+}
+-(void)_calculate{
+    self.right_label_4.text = [NSString stringWithFormat:@"%f",_res];
 }
 @end

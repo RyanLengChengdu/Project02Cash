@@ -11,6 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 typedef void(^ListLoaderFinishBlock)(BOOL success,NSArray<CashItem *>*dataArray);
 @interface ListLoader : NSObject
 -(void)loadDataWithFinishBlock:(ListLoaderFinishBlock)finishBlock;
+-(void)loadDataWithtagNum:(NSString *)tagNum WithFinishBlock:(ListLoaderFinishBlock)finishBlock;
 @end
 
 NS_ASSUME_NONNULL_END

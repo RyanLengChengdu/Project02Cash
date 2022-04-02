@@ -10,6 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CheckListCell : UITableViewCell
+@property (nonatomic, assign)BOOL color2;
 -(void)setDataWithCashItem:(CashItem *)item;
 @end
 

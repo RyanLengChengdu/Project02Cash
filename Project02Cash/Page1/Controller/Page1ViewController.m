@@ -135,7 +135,7 @@
         _tableView = [[UITableView alloc]init];
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        _tableView.backgroundColor = [UIColor colorWithRed:31/255.0 green:34/255.0 blue:38/255.0 alpha:1.00];
+        //_tableView.backgroundColor = [UIColor colorWithRed:31/255.0 green:34/255.0 blue:38/255.0 alpha:1.00];
         _tableView;
     })];
 
@@ -148,7 +148,7 @@
     
     _loader = [[ListLoader alloc]init];
     __weak typeof(self)weakSelf = self;
-    NSTimer *timer2 = [NSTimer timerWithTimeInterval:10.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
+    NSTimer *timer2 = [NSTimer timerWithTimeInterval:3.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
         __strong typeof(self)strongSelf = weakSelf;
         
         __weak typeof(self)weakSelf2 = strongSelf;
@@ -160,13 +160,7 @@
     }];
     [[NSRunLoop currentRunLoop] addTimer:timer2 forMode:NSRunLoopCommonModes];
     
-//    _loader = [[ListLoader alloc]init];
-//    __weak typeof(self)weakSelf = self;
-//    [self.loader loadDataWithFinishBlock:^(BOOL success, NSArray<CashItem *> *dataArray) {
-//        __strong typeof(self)strongSelf = weakSelf;
-//        strongSelf.dataArray = dataArray;
-//        [strongSelf.tableView reloadData];
-//    }];
+
     
     
 }
@@ -203,7 +197,7 @@
     if (!cell) {
         cell = [[CheckListCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
-    [cell setBackgroundColor:[UIColor colorWithRed:31/255.0 green:34/255.0 blue:38/255.0 alpha:1.00]];
+    cell.color2 = (indexPath.row%2 == 0) ? YES : NO;
     [cell setDataWithCashItem:[_dataArray objectAtIndex:indexPath.row]];
     return cell;
 }

@@ -6,6 +6,7 @@
 //
 
 #import "Page2ViewController.h"
+#import "RealtimeViewController.h"
 #import "Masonry.h"
 @interface Page2ViewController ()
 @property(nonatomic,strong)UIView *navigationBottom_Border;
@@ -80,17 +81,8 @@
     //firstView
     [self.view addSubview:({
         _GSBackgroundView =[[UIView alloc] init];
-        _GSBackgroundView.alpha = 1;
-        _GSBackgroundView.backgroundColor = [UIColor colorWithRed:214.0/255.0 green:37.0/255.0 blue:41.0/255.0 alpha:1.00];
-        // Shadow Code
-        _GSBackgroundView.layer.shadowColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:0.81].CGColor;
-        _GSBackgroundView.layer.shadowOffset = CGSizeMake(0,0);
-        _GSBackgroundView.layer.shadowRadius = 14;
-        _GSBackgroundView.layer.shadowOpacity = 1;
-        // Radius Code
         _GSBackgroundView.layer.cornerRadius = 8.33;
         _GSBackgroundView.tag = 0;
-        
         UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(_turnToDetail:)];
         [_GSBackgroundView addGestureRecognizer:recognizer];
         _GSBackgroundView;
@@ -101,6 +93,24 @@
         make.top.equalTo(self.mas_topLayoutGuideBottom).with.offset(18);
         make.height.equalTo(self.view).multipliedBy(116.0/811);
     }];
+    [_GSBackgroundView.layer addSublayer:({
+        CAGradientLayer *gl = [[CAGradientLayer alloc]init];
+        gl.colors = @[
+            (__bridge id)[UIColor colorWithRed:214/255.0 green:37/255.0 blue:41/255.0 alpha:1.00].CGColor,
+            (__bridge id)[UIColor colorWithRed:108/255.0 green:15/255.0 blue:16/255.0 alpha:1.00].CGColor,
+            ];
+        //gl.locations = @[@0.0, @1.0];
+        //左右渐变透明
+        gl.startPoint = CGPointMake(0, 0);
+        gl.endPoint = CGPointMake(1.0, 1.0);
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSLog(@"%@", self.GSBackgroundView);
+            gl.frame =self.GSBackgroundView.bounds;
+        });
+        //gl.frame = _outsideView.bounds;
+        gl.cornerRadius = 8.33;
+        gl;
+    })];
     
     [_GSBackgroundView addSubview:({
         _GSsquareView = [[UIView alloc]init];
@@ -347,5 +357,8 @@
 }
 -(void)_turnToDetail:(UITapGestureRecognizer *)sender{
     NSLog(@"%ld",sender.view.tag);
+    RealtimeViewController *realtimeVC = [[RealtimeViewController alloc]init];
+    realtimeVC.tagNum = [NSString stringWithFormat:@"%ld",sender.view.tag];
+    [self.navigationController pushViewController:realtimeVC animated:YES];
 }
 @end

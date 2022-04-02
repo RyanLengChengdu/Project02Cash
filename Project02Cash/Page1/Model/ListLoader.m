@@ -73,4 +73,36 @@
 //        NSLog(@"%@",error);
 //    }];
 }
+-(void)loadDataWithtagNum:(NSString *)tagNum WithFinishBlock:(ListLoaderFinishBlock)finishBlock{
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc]initWithSessionConfiguration:config];
+//    NSURL *url = [NSURL URLWithString:@"http://web.juhe.cn/finance/exchange/rmbquot?key=b50df16ad6df1951e49f1f937e98fe01"];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://web.juhe.cn/finance/exchange/rmbquot?key=b50df16ad6df1951e49f1f937e98fe01&bank=%@",tagNum]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    NSURLSessionDataTask *datatask = [manager dataTaskWithRequest:request uploadProgress:^(NSProgress * _Nonnull uploadProgress) {
+        
+    } downloadProgress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+        NSLog(@"%@",error);
+        NSMutableArray *dataArray =@[].mutableCopy;
+                for (int i = 1; i<14; i++) {
+                    [dataArray addObject:[((NSDictionary *)([((NSDictionary *)responseObject) objectForKey:@"result"][0])) objectForKey:[NSString stringWithFormat:@"data%d",i]]];
+                }
+                //NSLog(@"%@",dataArray);
+                NSMutableArray *ItemListArray = @[].mutableCopy;
+                for (NSDictionary *info in dataArray) {
+                    CashItem *item = [[CashItem alloc]init];
+                    item = [CashItem yy_modelWithDictionary:info];
+                    [ItemListArray addObject:item];
+                }
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    if (finishBlock) {
+                        finishBlock(YES,ItemListArray.copy);
+                    }
+                });
+    }];
+    [datatask resume];
+}
 @end
+

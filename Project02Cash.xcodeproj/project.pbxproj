@@ -23,6 +23,8 @@
 		5F44545127F448CB0002E1E0 /* ListLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F44545027F448CB0002E1E0 /* ListLoader.m */; };
 		5F48736C27F6DBED00324553 /* transferItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F48736B27F6DBED00324553 /* transferItem.m */; };
 		5F48737027F6DDB900324553 /* TransferCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F48736F27F6DDB900324553 /* TransferCell.m */; };
+		5FEE956327F7F03E0046506F /* RealtimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEE956227F7F03E0046506F /* RealtimeViewController.m */; };
+		5FEE956727F7F6110046506F /* RealtimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEE956627F7F6110046506F /* RealtimeCell.m */; };
 		A364B9F0AA47DA6D800D98CB /* libPods-Project02Cash.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C724AC4ED1F43FFCEBD94A /* libPods-Project02Cash.a */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +61,10 @@
 		5F48736B27F6DBED00324553 /* transferItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = transferItem.m; sourceTree = "<group>"; };
 		5F48736E27F6DDB900324553 /* TransferCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransferCell.h; sourceTree = "<group>"; };
 		5F48736F27F6DDB900324553 /* TransferCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransferCell.m; sourceTree = "<group>"; };
+		5FEE956127F7F03E0046506F /* RealtimeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealtimeViewController.h; sourceTree = "<group>"; };
+		5FEE956227F7F03E0046506F /* RealtimeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealtimeViewController.m; sourceTree = "<group>"; };
+		5FEE956527F7F6110046506F /* RealtimeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealtimeCell.h; sourceTree = "<group>"; };
+		5FEE956627F7F6110046506F /* RealtimeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealtimeCell.m; sourceTree = "<group>"; };
 		F8C724AC4ED1F43FFCEBD94A /* libPods-Project02Cash.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Project02Cash.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -95,6 +101,7 @@
 		5F0D3FB527F2AA6F00BC2FD3 /* Project02Cash */ = {
 			isa = PBXGroup;
 			children = (
+				5FEE956427F7F5DF0046506F /* RealTimePage */,
 				5F0D3FE127F2EAF100BC2FD3 /* SettingViewController.h */,
 				5F0D3FE227F2EAF100BC2FD3 /* SettingViewController.m */,
 				5F0D3FD527F2AE5B00BC2FD3 /* Page1 */,
@@ -206,6 +213,17 @@
 				5F48736F27F6DDB900324553 /* TransferCell.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		5FEE956427F7F5DF0046506F /* RealTimePage */ = {
+			isa = PBXGroup;
+			children = (
+				5FEE956127F7F03E0046506F /* RealtimeViewController.h */,
+				5FEE956227F7F03E0046506F /* RealtimeViewController.m */,
+				5FEE956527F7F6110046506F /* RealtimeCell.h */,
+				5FEE956627F7F6110046506F /* RealtimeCell.m */,
+			);
+			path = RealTimePage;
 			sourceTree = "<group>";
 		};
 		62A4A460B869B22835D46657 /* Frameworks */ = {
@@ -324,6 +342,8 @@
 				5F0D3FBE27F2AA6F00BC2FD3 /* ViewController.m in Sources */,
 				5F44544B27F423270002E1E0 /* CheckListCell.m in Sources */,
 				5F0D3FB827F2AA6F00BC2FD3 /* AppDelegate.m in Sources */,
+				5FEE956727F7F6110046506F /* RealtimeCell.m in Sources */,
+				5FEE956327F7F03E0046506F /* RealtimeViewController.m in Sources */,
 				5F44545127F448CB0002E1E0 /* ListLoader.m in Sources */,
 				5F0D3FC927F2AA7000BC2FD3 /* main.m in Sources */,
 				5F0D3FEB27F30D8B00BC2FD3 /* QiCardCell.m in Sources */,
