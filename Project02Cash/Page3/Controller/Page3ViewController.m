@@ -76,7 +76,7 @@
         _tableView = [[UITableView alloc]init];
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        _tableView.backgroundColor = [UIColor redColor];
+       // _tableView.backgroundColor = [UIColor redColor];
         _tableView;
     })];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -88,7 +88,7 @@
     [self.view addSubview:({
         _startButton = [[UIButton alloc]init];
         [_startButton addTarget:self action:@selector(_calculate) forControlEvents:UIControlEventTouchUpInside];
-        _startButton.backgroundColor = [UIColor redColor];
+        _startButton.backgroundColor = [UIColor colorWithRed:214/255.0 green:37/255.0 blue:41/255.0 alpha:1.00];
         [_startButton setTitle:@"开始进行新源汇率转换" forState:UIControlStateNormal];
         _startButton;
     })];
@@ -102,6 +102,7 @@
     [self.view addSubview:({
         _left_label_1 = [[UILabel alloc]init];
         _left_label_1.text = @"源货币类型";
+        _left_label_1.textColor = [UIColor whiteColor];
         _left_label_1.textAlignment = NSTextAlignmentCenter;
         _left_label_1;
     })];
@@ -115,6 +116,7 @@
     [self.view addSubview:({
         _left_label_2 = [[UILabel alloc]init];
         _left_label_2.text = @"目标货币类型";
+        _left_label_2.textColor = [UIColor whiteColor];
         _left_label_2.textAlignment = NSTextAlignmentCenter;
         _left_label_2;
     })];
@@ -128,6 +130,7 @@
     [self.view addSubview:({
         _left_label_3 = [[UILabel alloc]init];
         _left_label_3.text = @"转换货币类型";
+        _left_label_3.textColor = [UIColor whiteColor];
         _left_label_3.textAlignment = NSTextAlignmentCenter;
         _left_label_3;
     })];
@@ -141,6 +144,7 @@
     [self.view addSubview:({
         _left_label_4 = [[UILabel alloc]init];
         _left_label_4.text = @"最终换算后金额";
+        _left_label_4.textColor = [UIColor whiteColor];
         _left_label_4.textAlignment = NSTextAlignmentCenter;
         _left_label_4;
     })];
@@ -155,6 +159,7 @@
     [self.view addSubview:({
         _right_label_1 = [[UILabel alloc]init];
         //_right_label_1.text = @"最终换算后金额";
+        _right_label_1.textColor = [UIColor whiteColor];
         _right_label_1.textAlignment = NSTextAlignmentCenter;
         _right_label_1;
     })];
@@ -168,6 +173,7 @@
     [self.view addSubview:({
         _right_label_2 = [[UILabel alloc]init];
         //_right_label_2.text = @"最终换算后金额";
+        _right_label_2.textColor = [UIColor whiteColor];
         _right_label_2.textAlignment = NSTextAlignmentCenter;
         _right_label_2;
     })];
@@ -181,6 +187,7 @@
     [self.view addSubview:({
         _right_label_3 = [[UILabel alloc]init];
         //_right_label_3.text = @"最终换算后金额";
+        _right_label_3.textColor = [UIColor whiteColor];
         _right_label_3.textAlignment = NSTextAlignmentCenter;
         _right_label_3;
     })];
@@ -219,6 +226,7 @@
     }
     [cell setDataWithIndex:(int)indexPath.row];
     cell.backgroundColor = [UIColor colorWithRed:31/255.0 green:34/255.0 blue:38/255.0 alpha:1.00];
+    cell.textLabel.textColor = [UIColor whiteColor];
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

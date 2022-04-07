@@ -30,7 +30,7 @@
         [self.contentView addSubview:({
             _outsideView = [[UIView alloc]init];
             _outsideView.layer.cornerRadius = 8.33;
-
+            
             _outsideView;
         })];
         [_outsideView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -61,10 +61,10 @@
             gl.startPoint = CGPointMake(0, 0);
             gl.endPoint = CGPointMake(1.0, 1.0);
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-
+                
                 NSLog(@"%@", self.outsideView);
                 gl.frame =self.outsideView.bounds;
-
+                
             });
             //gl.frame = _outsideView.bounds;
             gl.cornerRadius = 8.33;
@@ -192,7 +192,7 @@
         [_outsideView addSubview:({
             _time_Label = [[UILabel alloc]init];
             //_time_Label.text = @"发布时间：00:00:00";
-            
+            _time_Label.textColor = [UIColor orangeColor];
             _time_Label;
         })];
         [_time_Label mas_makeConstraints:^(MASConstraintMaker *make) {

@@ -7,6 +7,7 @@
 
 #import "SettingViewController.h"
 #import "Masonry.h"
+#import "Toast.h"
 @interface SettingViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong,readwrite)UIView *square1;
 @property(nonatomic,strong,readwrite)UIImageView *leftImage_privacy;
@@ -43,6 +44,9 @@
         _square1 = [[UIView alloc]init];
         _square1.backgroundColor = [UIColor colorWithRed:49/255.0 green:53/255.0 blue:57/255.0 alpha:1.00];
             _square1.layer.cornerRadius = 8;
+        UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(_popupToast:)];
+        [_square1 addGestureRecognizer:recognizer];
+        _square1.tag = 1;
         _square1;
     })];
     [_square1 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -76,6 +80,9 @@
         _square2 = [[UIView alloc]init];
         _square2.backgroundColor = [UIColor colorWithRed:49/255.0 green:53/255.0 blue:57/255.0 alpha:1.00];
         _square2.layer.cornerRadius = 8;
+        UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(_popupToast:)];
+        [_square2 addGestureRecognizer:recognizer];
+        _square2.tag = 2;
         _square2;
     })];
     [_square2 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -109,6 +116,9 @@
         _square3 = [[UIView alloc]init];
         _square3.backgroundColor = [UIColor colorWithRed:49/255.0 green:53/255.0 blue:57/255.0 alpha:1.00];
         _square3.layer.cornerRadius = 8;
+        UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(_popupToast:)];
+        [_square3 addGestureRecognizer:recognizer];
+        _square3.tag = 3;
         _square3;
     })];
     [_square3 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -196,5 +206,43 @@
         
     }
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row == 2) {
+        [[UIApplication sharedApplication] performSelector:@selector(suspend)];
+    }
+}
+-(void)_popupToast:(UITapGestureRecognizer *)sender{
+    if (sender.view.tag == 1) {
+        [self.view makeToast:@""
+                    duration:2.0
+                    position:CSToastPositionCenter
+                       title:@"查看隐私声明"
+                       image:[UIImage imageNamed:@"toast.png"]
+                       style:nil
+                  completion:^(BOOL didTap) {
+                     
+                  }];
+    }else if (sender.view.tag == 2) {
+        [self.view makeToast:@"正在清理缓存中......"
+                    duration:2.0
+                    position:CSToastPositionCenter
+                       title:@"清理缓存"
+                       image:[UIImage imageNamed:@"toast.png"]
+                       style:nil
+                  completion:^(BOOL didTap) {
+                      
+                  }];
+    }else{
+        [self.view makeToast:@"已是最新版本V1.0.2"
+                    duration:2.0
+                    position:CSToastPositionCenter
+                    title:nil
+                       image:[UIImage imageNamed:@"toast.png"]
+                       style:nil
+                  completion:^(BOOL didTap) {
+                  }];
+    }
 }
 @end

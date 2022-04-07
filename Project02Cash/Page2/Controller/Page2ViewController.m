@@ -164,13 +164,14 @@
             _scrollView.contentSize = CGSizeMake( 1.25*self.view.bounds.size.width, 0.5*self.view.bounds.size.width);
             _scrollView.userInteractionEnabled = YES;
             _scrollView.scrollEnabled = YES;
-            //_scrollView.backgroundColor = [UIColor redColor];
+            _scrollView.showsHorizontalScrollIndicator = NO;
+            _scrollView.showsVerticalScrollIndicator = NO;
             _scrollView;
         })];
     [_scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.equalTo(self.view).with.offset(0);
-        make.top.equalTo(_GSBackgroundView.mas_bottom).with.offset(44);
-        make.height.equalTo(self.view).multipliedBy(194.0/811);
+        make.top.equalTo(_GSBackgroundView.mas_bottom).with.offset(34);
+        make.height.equalTo(self.view).multipliedBy(210.0/811);
     }];
     
     //scrollView_view1
@@ -359,6 +360,7 @@
     NSLog(@"%ld",sender.view.tag);
     RealtimeViewController *realtimeVC = [[RealtimeViewController alloc]init];
     realtimeVC.tagNum = [NSString stringWithFormat:@"%ld",sender.view.tag];
+    realtimeVC.title = @"各大银行实时汇率";
     [self.navigationController pushViewController:realtimeVC animated:YES];
 }
 @end

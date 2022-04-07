@@ -30,9 +30,11 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    //[self.navigationItem setHidesBackButton:YES];
+    [self.navigationItem setHidesBackButton:YES];
     self.tabBarItem.selectedImage = [[UIImage imageNamed:@"tab-icon-hv-s"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    self.navigationController.navigationBar.topItem.title = @"各大银行实时汇率";
+    UIBarButtonItem *btn = [[UIBarButtonItem alloc]initWithTitle:@"<" style:UIBarButtonItemStylePlain target:self action:@selector(_backToPreviewPage)];
+    self.navigationItem.leftBarButtonItem = btn;
+    //self.navigationController.navigationBar.topItem.leftBarButtonItem = btn;
     //navigationbar的下划线设置
     [self.view addSubview:({
         _navigationBottom_Border = [[UIView alloc]init];
@@ -48,6 +50,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.view setBackgroundColor:[UIColor colorWithRed:31/255.0 green:34/255.0 blue:38/255.0 alpha:1.00]];
     [self.view addSubview:({
         _scrollView = [[UIScrollView alloc]initWithFrame:self.view.bounds];
         _scrollView.delegate = self;
@@ -96,6 +99,7 @@
         _TopSquareView = [[UIView alloc]init];
         _TopSquareView.backgroundColor = [UIColor whiteColor];
         _TopSquareView.layer.cornerRadius = 15;
+        _TopSquareView.contentMode = UIViewContentModeScaleAspectFit;
         _TopSquareView;
     })];
     [_TopSquareView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -106,7 +110,8 @@
     }];
     [_TopSquareView addSubview:({
         _TopImageView = [[UIImageView alloc]init];
-        _TopImageView.image = [UIImage imageNamed:@"vzdkjgjr-img"];
+        //_TopImageView.image = [UIImage imageNamed:@"vzdkjgjr-img"];
+        _TopImageView.contentMode = UIViewContentModeScaleAspectFit;
         _TopImageView;
     })];
     [_TopImageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -116,7 +121,7 @@
     
     [_TopBackgroundView addSubview:({
         _TopLabel1 = [[UILabel alloc]init];
-        _TopLabel1.text = @"GSBank";
+        //_TopLabel1.text = @"GSBank";
         _TopLabel1.textColor = [UIColor whiteColor];
         _TopLabel1.font = [UIFont systemFontOfSize:20];
         _TopLabel1;
@@ -128,7 +133,7 @@
     
     [_TopBackgroundView addSubview:({
         _TopLabel2 = [[UILabel alloc]init];
-        _TopLabel2.text = @"工商银行实时汇率";
+        //_TopLabel2.text = @"工商银行实时汇率";
         _TopLabel2.textColor = [UIColor whiteColor];
         _TopLabel2.font = [UIFont systemFontOfSize:20];
         _TopLabel2;
@@ -151,6 +156,7 @@
         make.height.equalTo(self.view).multipliedBy(8.25);
     }];
     
+    [self _changeTopViewContent];
     _loader = [[ListLoader alloc]init];
     __weak typeof(self)weakSelf = self;
     [self.loader loadDataWithtagNum:self.tagNum WithFinishBlock:^(BOOL success, NSArray<CashItem *> * _Nonnull dataArray) {
@@ -176,22 +182,15 @@
     return cell;
 }
 
-//layer相关
-//-(void)layoutSublayersOfLayer:(CALayer *)layer{
-//    //[super layoutSublayersOfLayer:layer];
-//    //添加layer
-//    [self addCornerMethod];
-//}
-//
-///**
-// 添加layer方法
-// */
-//-(void)addCornerMethod{
-//    UIRectCorner corner = UIRectCornerAllCorners;
-//    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:self.timeoutBtn.bounds byRoundingCorners:corner cornerRadii:CGSizeMake(3, 3)];
-//    CAShapeLayer *masklayer = [[CAShapeLayer alloc]init];
-//    masklayer.frame = self.timeoutBtn.bounds;
-//    masklayer.path = path.CGPath;
-//    self.timeoutBtn.layer.mask = masklayer;
-//}
+//设置topview的方法
+-(void)_changeTopViewContent{
+    NSArray * topView_info = @[@[@"vzdkjgjr-img",@"工商银行实时汇率",@"GSBank"],@[@"sdfkjeeee-img",@"招商银行实时汇率",@"ZSBank"],@[@"vzdkjgjr-img",@"建设银行实时汇率",@"JSBank"],@[@"sdfkjeeee-img",@"中国银行实时汇率",@"ZGBank"],@[@"vzdkjgjr-img",@"交通银行实时汇率",@"JTBank"],@[@"sdfkjeeee-img",@"农业银行实时汇率",@"NYBank"]];
+    int tag = [self.tagNum intValue];
+    _TopImageView.image = [UIImage imageNamed:topView_info[tag][0]];
+    _TopLabel1.text =topView_info[tag][2];
+    _TopLabel2.text = topView_info[tag][1];
+}
+-(void)_backToPreviewPage{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end

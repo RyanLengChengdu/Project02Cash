@@ -51,7 +51,6 @@
     }
     [_view1 addSubview:({
         _label1_1 = [[UILabel alloc]init];
-        _label1_1.text = @"当前货币类型----新台币";
         _label1_1;
     })];
     [_label1_1 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -82,7 +81,6 @@
     }];
     [_view2 addSubview:({
         _label2_2 = [[UILabel alloc]init];
-        //_label2_2.text = @"货币类型";
         _label2_2.textColor = _label2_1.textColor;
         _label2_2;
     })];
@@ -105,8 +103,8 @@
     }];
     [_view3 addSubview:({
         _label3_1 = [[UILabel alloc]init];
-        _label3_1.text = @"货币类型";
-        //_label3_1.textColor = [UIColor redColor];
+        _label3_1.textColor = [UIColor whiteColor];
+        _label3_1.text = @"货币简码";
         _label3_1;
     })];
     [_label3_1 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -115,7 +113,7 @@
     }];
     [_view3 addSubview:({
         _label3_2 = [[UILabel alloc]init];
-        //_label3_2.text = @"货币类型";
+        _label3_2.textColor = [UIColor whiteColor];
         //_label3_2.textColor = _label2_1.textColor;
         _label3_2;
     })];
@@ -138,7 +136,7 @@
     }];
     [_view4 addSubview:({
         _label4_1 = [[UILabel alloc]init];
-        _label4_1.text = @"货币类型";
+        _label4_1.text = @"现汇买入价";
         _label4_1.textColor = _label2_1.textColor;
         _label4_1;
     })];
@@ -148,7 +146,6 @@
     }];
     [_view4 addSubview:({
         _label4_2 = [[UILabel alloc]init];
-       // _label4_2.text = @"货币类型";
         _label4_2.textColor = _label2_1.textColor;
         _label4_2;
     })];
@@ -171,8 +168,8 @@
     }];
     [_view5 addSubview:({
         _label5_1 = [[UILabel alloc]init];
-        _label5_1.text = @"货币类型";
-        //_label5_1.textColor = [UIColor redColor];
+        _label5_1.textColor = [UIColor whiteColor];
+        _label5_1.text = @"现汇卖出价";
         _label5_1;
     })];
     [_label5_1 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -181,8 +178,7 @@
     }];
     [_view5 addSubview:({
         _label5_2 = [[UILabel alloc]init];
-        //_label5_2.text = @"货币类型";
-        //_label5_2.textColor = _label2_1.textColor;
+        _label5_2.textColor = [UIColor whiteColor];
         _label5_2;
     })];
     [_label5_2 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -203,7 +199,7 @@
     }];
     [_view6 addSubview:({
         _label6_1 = [[UILabel alloc]init];
-        _label6_1.text = @"货币类型";
+        _label6_1.text = @"现钞买入价";
         _label6_1.textColor = _label2_1.textColor;
         _label6_1;
     })];
@@ -213,7 +209,6 @@
     }];
     [_view6 addSubview:({
         _label6_2 = [[UILabel alloc]init];
-        //_label6_2.text = @"货币类型";
         _label6_2.textColor = _label2_1.textColor;
         _label6_2;
     })];
@@ -236,8 +231,8 @@
     }];
     [_view7 addSubview:({
         _label7_1 = [[UILabel alloc]init];
-        _label7_1.text = @"货币类型";
-        //_label7_1.textColor = [UIColor redColor];
+        _label7_1.textColor = [UIColor whiteColor];
+        _label7_1.text = @"现钞卖出价";
         _label7_1;
     })];
     [_label7_1 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -246,8 +241,7 @@
     }];
     [_view7 addSubview:({
         _label7_2 = [[UILabel alloc]init];
-        //_label7_2.text = @"货币类型";
-        //_label7_2.textColor = _label2_1.textColor;
+        _label7_2.textColor = [UIColor whiteColor];
         _label7_2;
     })];
     [_label7_2 mas_makeConstraints:^(MASConstraintMaker *make) {

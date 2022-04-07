@@ -34,7 +34,7 @@
         __weak typeof(self)weakSelf = self;
         NSTimer *timer = [NSTimer timerWithTimeInterval:10.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
             __strong typeof(self)strongSelf = weakSelf;
-            [strongSelf.cardView reloadData];
+            [strongSelf.cardView reloadDataAnimated:YES];
         }];
         [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
 }
@@ -100,6 +100,7 @@
     [_scrollView addSubview:({
         _allCheckListLabel = [[UILabel alloc]init];
         _allCheckListLabel.text = @"所有货币实时汇率查询表";
+        _allCheckListLabel.textColor = [UIColor whiteColor];
         _allCheckListLabel;
     })];
     [_allCheckListLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -135,7 +136,7 @@
         _tableView = [[UITableView alloc]init];
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        //_tableView.backgroundColor = [UIColor colorWithRed:31/255.0 green:34/255.0 blue:38/255.0 alpha:1.00];
+        _tableView.backgroundColor = [UIColor clearColor];
         _tableView;
     })];
 
@@ -198,6 +199,7 @@
         cell = [[CheckListCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
     cell.color2 = (indexPath.row%2 == 0) ? YES : NO;
+    cell.backgroundColor = [UIColor clearColor];
     [cell setDataWithCashItem:[_dataArray objectAtIndex:indexPath.row]];
     return cell;
 }
@@ -227,7 +229,8 @@
 //    NSLog(@"move point = %@", NSStringFromCGPoint(point));
 }
 -(void)_scroll{
-    CGPoint position = CGPointMake(0, 100);
-    [_scrollView setContentOffset:position animated:YES];
+//    CGPoint position = CGPointMake(0, 100);
+//    [_scrollView setContentOffset:position animated:YES];
+    [_scrollView setContentOffset:CGPointMake(0, _allCheckListLabel.frame.origin.y-65) animated:YES];
 }
 @end

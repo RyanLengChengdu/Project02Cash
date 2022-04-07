@@ -19,6 +19,7 @@
     if (self) {
         [self.contentView addSubview:({
             _label1 = [[UILabel alloc]init];
+            _label1.textColor = [UIColor whiteColor];
             _label1.highlightedTextColor = [UIColor redColor];
             _label1;
         })];
@@ -28,6 +29,7 @@
         }];
         [self.contentView addSubview:({
             _label2 = [[UILabel alloc]init];
+            _label2.textColor = [UIColor whiteColor];
             _label2.highlightedTextColor = [UIColor redColor];
             _label2;
         })];
@@ -38,6 +40,7 @@
         
         [self.contentView addSubview:({
             _label3 = [[UILabel alloc]init];
+            _label3.textColor = [UIColor whiteColor];
             _label3.highlightedTextColor = [UIColor redColor];
             _label3;
         })];
